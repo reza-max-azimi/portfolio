@@ -48,20 +48,24 @@
     .badges{display:grid;gap:10px;margin:22px 0 21px;max-width:880px}
     .badge-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
     .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:10px;padding:9px 14px;font-size:14px;font-weight:800;color:#073B3A;box-shadow:0 8px 18px rgba(15,23,42,.06)}
-    .badge.long{max-width:100%}
+    .badge.long{max-width:100%;flex:1 1 470px}
+    .badge.tn-badge{flex:0 1 300px}
+    .authorization-row{align-items:stretch}
     .badge .icon{color:var(--teal);font-weight:900;font-size:15px}
     .actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px}
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 22px;border-radius:9px;text-decoration:none;font-weight:900;letter-spacing:.04em;text-transform:uppercase;box-shadow:0 10px 22px rgba(15,23,42,.09)}
     .btn-download{background:linear-gradient(135deg,var(--dark-teal),var(--teal));color:var(--gold)}
-    .btn-linkedin{background:white;color:#0284C7;border:2px solid #38BDF8}
+    .btn-linkedin{background:#E0F2FE;color:#075985;border:2px solid #7DD3FC}
 
     .metrics-shell{margin-top:-22px;position:relative;z-index:5}
-    .metrics{display:grid;grid-template-columns:repeat(6,1fr);gap:0;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
-    .metric{display:flex;align-items:center;gap:13px;padding:22px 16px;border-right:1px solid var(--line);min-height:112px}
+    .metrics{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden;align-items:stretch}
+    .metric{display:grid;grid-template-columns:54px minmax(0,1fr);align-items:center;gap:12px;padding:20px 14px;border-right:1px solid var(--line);min-height:120px}
     .metric:last-child{border-right:0}
-    .metric-icon{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--dark-teal));display:grid;place-items:center;color:#fff;font-size:22px;font-weight:900;flex:0 0 auto}
-    .metric strong{display:block;color:var(--dark-teal);font-size:29px;line-height:1;font-weight:900}
-    .metric span{display:block;color:#1f2937;font-size:13px;line-height:1.25;margin-top:4px}
+    .metric-icon{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,var(--dark-teal),var(--teal));display:grid;place-items:center;color:var(--gold);font-weight:900;flex:0 0 auto;box-shadow:inset 0 0 0 2px rgba(255,255,255,.18),0 8px 18px rgba(15,94,89,.20)}
+    .metric-icon svg{width:30px;height:30px;display:block;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+    .metric > div{min-height:68px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+    .metric strong{display:flex;align-items:center;color:var(--dark-teal);font-size:28px;line-height:1;font-weight:900;min-height:31px;white-space:nowrap}
+    .metric > div > span{display:block;color:#1f2937;font-size:12.5px;line-height:1.25;margin-top:5px}
 
     .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:22px auto 0}
     .card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:25px 26px;box-shadow:0 12px 28px rgba(15,23,42,.07)}
@@ -106,6 +110,7 @@
       .metric:last-child{border-bottom:0}
       .list{grid-template-columns:1fr}
       .badge,.btn{width:100%;justify-content:center;text-align:center}
+      .badge.long,.badge.tn-badge{flex:1 1 100%}
     }
   </style>
 </head>
@@ -142,13 +147,11 @@
           <div class="badges" aria-label="Professional location and work authorization details">
             <div class="badge-row">
               <span class="badge"><span class="icon">✓</span>Canadian Citizen</span>
-              <span class="badge"><span class="icon">⌖</span>Toronto, Canada • Employment based in the Netherlands</span>
+              <span class="badge"><span class="icon">⌖</span>Toronto, Canada • Based in the Netherlands for employment</span>
             </div>
-            <div class="badge-row">
-              <span class="badge long"><span class="icon">↗</span>Open to relocation back to Canada or the United States</span>
-            </div>
-            <div class="badge-row">
-              <span class="badge"><span class="icon">▣</span>TN status eligible for US roles</span>
+            <div class="badge-row authorization-row">
+              <span class="badge long"><span class="icon">↗</span>Seeking Canadian/U.S. opportunities to relocate back to Canada/USA</span>
+              <span class="badge tn-badge"><span class="icon">▣</span>TN Status eligible for U.S. roles</span>
             </div>
           </div>
 
@@ -162,12 +165,12 @@
 
     <section class="metrics-shell" aria-label="Career highlights">
       <div class="wrap metrics">
-        <div class="metric"><span class="metric-icon">👥</span><div><strong>15+</strong><span>Years of Quality Experience</span></div></div>
-        <div class="metric"><span class="metric-icon">☑</span><div><strong>100+</strong><span>Internal &amp; Supplier Audits Led</span></div></div>
-        <div class="metric"><span class="metric-icon">★</span><div><strong>FDA</strong><span>Inspection Support &amp; Compliance</span></div></div>
-        <div class="metric"><span class="metric-icon">↗</span><div><strong>QMS</strong><span>Improvement &amp; System Strengthening</span></div></div>
-        <div class="metric"><span class="metric-icon">◎</span><div><strong>Global</strong><span>Regulatory Knowledge</span></div></div>
-        <div class="metric"><span class="metric-icon">✓</span><div><strong>500+</strong><span>Supplier Approvals Supported</span></div></div>
+        <div class="metric"><span class="metric-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><div><strong>15+</strong><span>Years of Quality Experience</span></div></div>
+        <div class="metric"><span class="metric-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/><path d="M7 8h5"/><path d="M7 17h6"/></svg></span><div><strong>100+</strong><span>Internal &amp; Supplier Audits Led</span></div></div>
+        <div class="metric"><span class="metric-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 4v5c0 5-3.5 8.5-7 9-3.5-.5-7-4-7-9V7l7-4z"/><path d="M9 12l2 2 4-5"/><path d="M8 21l1-4"/><path d="M16 21l-1-4"/></svg></span><div><strong>FDA</strong><span>Inspection Support &amp; Compliance</span></div></div>
+        <div class="metric"><span class="metric-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M7 15l4-4 3 3 6-7"/><path d="M16 7h4v4"/></svg></span><div><strong>QMS</strong><span>Improvement &amp; System Strengthening</span></div></div>
+        <div class="metric"><span class="metric-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 0 20"/><path d="M12 2a15.3 15.3 0 0 0 0 20"/></svg></span><div><strong>Global</strong><span>Regulatory Knowledge</span></div></div>
+        <div class="metric"><span class="metric-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 7l-8 10-4-4"/><path d="M4 7l8 10 8-10"/><path d="M6 5h12"/><path d="M8 21h8"/></svg></span><div><strong>500+</strong><span>Supplier Approvals Supported</span></div></div>
       </div>
     </section>
 
