@@ -59,13 +59,15 @@
 
     .metrics-shell{margin-top:-22px;position:relative;z-index:5}
     .metrics{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden;align-items:stretch}
-    .metric{display:grid;grid-template-columns:54px minmax(0,1fr);align-items:center;gap:12px;padding:20px 14px;border-right:1px solid var(--line);min-height:120px}
+    .metric{display:grid;grid-template-columns:54px minmax(0,1fr);align-items:start;gap:12px;padding:18px 14px 18px;border-right:1px solid var(--line);min-height:120px}
     .metric:last-child{border-right:0}
     .metric-icon{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,var(--dark-teal),var(--teal));display:grid;place-items:center;color:var(--gold);font-weight:900;flex:0 0 auto;box-shadow:inset 0 0 0 2px rgba(255,255,255,.18),0 8px 18px rgba(15,94,89,.20)}
     .metric-icon svg{width:30px;height:30px;display:block;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
-    .metric > div{height:74px;display:grid;grid-template-rows:34px auto;align-content:center;align-items:start;min-width:0}
-    .metric strong{display:flex;align-items:center;color:var(--dark-teal);font-size:28px;line-height:1;font-weight:900;height:34px;white-space:nowrap}
+    .metric > div{height:74px;display:grid;grid-template-rows:34px auto;align-content:start;align-items:start;min-width:0;padding-top:1px}
+    .metric strong{display:flex;align-items:flex-start;color:var(--dark-teal);font-size:28px;line-height:1;font-weight:900;height:34px;white-space:nowrap}
     .metric > div > span{display:block;color:#1f2937;font-size:12.5px;line-height:1.25;margin-top:2px}
+    .metric:nth-child(5) > div,
+    .metric:nth-child(6) > div{transform:translateY(-3px)}
 
     .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:22px auto 0}
     .card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:25px 26px;box-shadow:0 12px 28px rgba(15,23,42,.07)}
